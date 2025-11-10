@@ -9,10 +9,10 @@ export function HeroBanner() {
   const heroImage = PlaceHolderImages.find((img) => img.id === "hero-banner");
 
   return (
-    <section className="relative h-[70vh] w-full bg-primary md:h-[90vh]">
+    <section className="relative h-[100vh] w-full bg-primary md:h-[100vh]">
       <div className="absolute inset-0">
         {heroImage && (
-          <div className="relative w-full h-[500px]">
+          <div className="relative w-full h-[500px] h-[100vh]">
             <img
               src={heroImage.imageUrl}
               alt={heroImage.description}

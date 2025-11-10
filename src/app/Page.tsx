@@ -3,12 +3,14 @@ import { ProductGrid } from "../components/home/Product-grid";
 import { AboutSection } from "../components/home/About-section"
 import { ReviewsSection } from "../components/home/Review-Section";
 import { getProducts, getReviews } from "../lib/data";
+import Navbar from "../components/shared/Navbar.js";
 export default function Home() {
   const products = getProducts();
   const reviews = getReviews();
 
   return (
     <div className="flex flex-col min-h-dvh">
+      <Navbar />
       <HeroBanner />
       <ProductGrid products={products} />
       <AboutSection />
