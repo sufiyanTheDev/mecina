@@ -38,6 +38,7 @@ export function ProductCard({ product }: ProductCardProps) {
       <div className="flex flex-1 flex-col p-4">
         <div className="flex-1">
           <h3 className="text-lg font-semibold">
+            {product.name}
             {/* <Link href={`/product/${product.id}`}>{product.name}</Link> */}
           </h3>
           <p className="mt-1 text-sm text-muted-foreground">{product.notes}</p>
@@ -45,7 +46,7 @@ export function ProductCard({ product }: ProductCardProps) {
         
         <div className="mt-4 flex items-end justify-between">
             <p className="text-lg font-bold text-foreground">
-                ${product.price.toFixed(2)}
+                ₹{product.price.toFixed(2)}
             </p>
         </div>
 

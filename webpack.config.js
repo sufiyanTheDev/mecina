@@ -24,6 +24,13 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.(png|jpe?g|gif|svg|webp)$/i,
+        type: "asset/resource",
+        generator: {
+          filename: "assets/images/[name][hash][ext]",
+        },
+      },
+      {
         test: /\.[jt]sx?$/,
         exclude: /node_modules/,
         use: {

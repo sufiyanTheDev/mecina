@@ -3,23 +3,25 @@
 import { Button } from "../ui/button";
 import data from "../../lib/placeholder-images.json";
 // import Link from "next/link";
+import heroBanner from "../../assets/hero-banner-img.png";
 
 const PlaceHolderImages = data.placeholderImages;
 export function HeroBanner() {
   const heroImage = PlaceHolderImages.find((img) => img.id === "hero-banner");
 
   return (
-    <section className="relative h-[100vh] w-full bg-primary md:h-[100vh]">
+    <section className="relative h-[100vh] w-full bg-primary md:h-[100vh] banner-color">
       <div className="absolute inset-0">
         {heroImage && (
           <div className="relative w-full h-[500px] h-[100vh]">
-            <img
-              src={heroImage.imageUrl}
+            {/* <img
+              src={heroBanner}
               alt={heroImage.description}
               data-ai-hint={heroImage.imageHint}
               className="absolute inset-0 h-full w-full object-cover"
               loading="eager"
-            />
+            /> */}
+            <></>
           </div>
         )}
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent" />
