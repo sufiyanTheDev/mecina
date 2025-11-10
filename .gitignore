@@ -69,3 +69,7 @@ coverage-final.json
 # Local history or IDE files
 .history/
 *.log
+
+
+# Firebase deploy cache
+.firebase/
