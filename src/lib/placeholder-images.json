@@ -1,0 +1,40 @@
+{
+  "placeholderImages": [
+    {
+      "id": "hero-banner",
+      "description": "A luxurious, minimalist scene with soft lighting and elegant props, suggesting sophistication.",
+      "imageUrl": "https://images.unsplash.com/photo-1745284504955-b72d183af1f7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8bHV4dXJ5JTIwbWluaW1hbGlzdHxlbnwwfHx8fDE3NjI3MDMxNzF8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "luxury minimalist"
+    },
+    {
+      "id": "about-section",
+      "description": "An artful shot of perfume ingredients like flowers and spices on a textured surface.",
+      "imageUrl": "https://images.unsplash.com/photo-1709297744886-0df99454acf5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxwZXJmdW1lJTIwaW5ncmVkaWVudHN8ZW58MHx8fHwxNzYyNjg3ODE4fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "perfume ingredients"
+    },
+    {
+      "id": "product-1",
+      "description": "Elegant perfume bottle for 'Celestial Bloom'.",
+      "imageUrl": "https://images.unsplash.com/photo-1594035910387-fea47794261f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxwZXJmdW1lJTIwYm90dGxlfGVufDB8fHx8MTc2MjY2NzE2Mnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "perfume bottle"
+    },
+    {
+      "id": "product-2",
+      "description": "Elegant perfume bottle for 'Velvet Oud'.",
+      "imageUrl": "https://images.unsplash.com/photo-1615160460366-2c9a41771b51?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxwZXJmdW1lJTIwYm90dGxlfGVufDB8fHx8MTc2MjY2NzE2Mnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "perfume bottle"
+    },
+    {
+      "id": "product-3",
+      "description": "Elegant perfume bottle for 'Amber Glow'.",
+      "imageUrl": "https://images.unsplash.com/photo-1594035910387-fea47794261f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxwZXJmdW1lJTIwYm90dGxlfGVufDB8fHx8MTc2MjY2NzE2Mnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "perfume bottle"
+    },
+    {
+      "id": "product-4",
+      "description": "Elegant perfume bottle for 'Siren's Call'.",
+      "imageUrl": "https://images.unsplash.com/photo-1680607622631-1e243ddd6782?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxwZXJmdW1lJTIwYm90dGxlfGVufDB8fHx8MTc2MjY2NzE2Mnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "perfume bottle"
+    }
+  ]
+}
