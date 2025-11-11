@@ -1,4 +1,5 @@
 "use client";
+import { useNavigate } from "react-router-dom";
 import {
   Navbar,
   NavBody,
@@ -15,12 +16,12 @@ import { useState } from "react";
 export default function NavbarDemo() {
   const navItems = [
     {
-      name: "Features",
-      link: "#features",
+      name: "Home",
+      link: "/",
     },
     {
-      name: "Pricing",
-      link: "#pricing",
+      name: "Products",
+      link: "/Products",
     },
     {
       name: "Contact",
@@ -29,7 +30,13 @@ export default function NavbarDemo() {
   ];
 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
+  const navigate = useNavigate();
+  function handleNavigation(link) {
+    if(link){
+      setIsMobileMenuOpen(false)
+      navigate(link);
+    }
+  }
   return (
     <div className="relative w-full">
       <Navbar>
@@ -54,13 +61,12 @@ export default function NavbarDemo() {
 
           <MobileNavMenu isOpen={isMobileMenuOpen} onClose={() => setIsMobileMenuOpen(false)}>
             {navItems.map((item, idx) => (
-              <a
+              <button
                 key={`mobile-link-${idx}`}
-                href={item.link}
-                onClick={() => setIsMobileMenuOpen(false)}
+                onClick={() => handleNavigation(item.link)}
                 className="relative text-neutral-600 dark:text-neutral-300">
                 <span className="block">{item.name}</span>
-              </a>
+              </button>
             ))}
             <div className="flex w-full flex-col gap-4">
               <NavbarButton

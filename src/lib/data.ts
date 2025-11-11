@@ -1,60 +1,12 @@
-import data from './placeholder-images.json';
-
-const PlaceHolderImages = data.placeholderImages;
-export interface Product {
-  id: string;
-  name: string;
-  notes: string;
-  price: number;
-  imageUrl: string;
-  imageHint: string;
-  badge?: 'New' | 'Bestseller';
-}
+import { getAllProducts, Product } from './products';
+export type { Product } from './products';
 
 export interface Review {
-  id: string;
-  name: string;
-  quote: string;
-  rating: number;
+    id: string;
+    name: string;
+    quote: string;
+    rating: number;
 }
-
-const products: Product[] = [
-  {
-    id: 'prod_1',
-    name: 'Celestial Bloom',
-    notes: 'Jasmine, Tuberose, Sandalwood',
-    price: 180,
-    imageUrl: PlaceHolderImages.find(p => p.id === 'product-1')?.imageUrl || '',
-    imageHint: PlaceHolderImages.find(p => p.id === 'product-1')?.imageHint || '',
-    badge: 'New',
-  },
-  {
-    id: 'prod_2',
-    name: 'Velvet Oud',
-    notes: 'Oud, Rose, Saffron',
-    price: 220,
-    imageUrl: PlaceHolderImages.find(p => p.id === 'product-2')?.imageUrl || '',
-    imageHint: PlaceHolderImages.find(p => p.id === 'product-2')?.imageHint || '',
-    badge: 'Bestseller',
-  },
-  {
-    id: 'prod_3',
-    name: 'Amber Glow',
-    notes: 'Amber, Vanilla, Bergamot',
-    price: 165,
-    imageUrl: PlaceHolderImages.find(p => p.id === 'product-3')?.imageUrl || '',
-    imageHint: PlaceHolderImages.find(p => p.id === 'product-3')?.imageHint || '',
-  },
-  {
-    id: 'prod_4',
-    name: 'Siren\'s Call',
-    notes: 'Sea Salt, Orchid, Driftwood',
-    price: 195,
-    imageUrl: PlaceHolderImages.find(p => p.id === 'product-4')?.imageUrl || '',
-    imageHint: PlaceHolderImages.find(p => p.id === 'product-4')?.imageHint || '',
-  },
-];
-
 const reviews: Review[] = [
     {
         id: 'rev_1',
@@ -88,5 +40,5 @@ const reviews: Review[] = [
     }
 ]
 
-export const getProducts = (): Product[] => products;
+export const getProducts = (): Product[] => getAllProducts();
 export const getReviews = (): Review[] => reviews;

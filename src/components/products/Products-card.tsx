@@ -4,6 +4,7 @@ import type { Product } from "../../lib/data";
 import { Button } from "../../components/ui/button";
 import { Badge } from "../../components/ui/badge";
 import { ShoppingCart, Eye } from "lucide-react";
+import { Link } from 'react-router-dom';
 
 interface ProductCardProps {
   product: Product;
@@ -13,9 +14,9 @@ export function ProductCard({ product }: ProductCardProps) {
   return (
     <div className="group relative flex flex-col rounded-lg bg-card text-card-foreground transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl">
       <div className="relative overflow-hidden rounded-t-lg">
-        {/* <Link href={`/product/${product.id}`} className="absolute inset-0 z-10" aria-label={`View ${product.name}`}>
+        <Link to={`/products/${product.id}`} className="absolute inset-0 z-10" aria-label={`View ${product.name}`}>
           <span className="sr-only">View {product.name}</span>
-        </Link> */}
+        </Link>
         <img
             src={product.imageUrl}
             alt={`Bottle of ${product.name}`}
@@ -38,8 +39,7 @@ export function ProductCard({ product }: ProductCardProps) {
       <div className="flex flex-1 flex-col p-4">
         <div className="flex-1">
           <h3 className="text-lg font-semibold">
-            {product.name}
-            {/* <Link href={`/product/${product.id}`}>{product.name}</Link> */}
+            <Link to={`/products/${product.id}`} className="hover:underline">{product.name}</Link>
           </h3>
           <p className="mt-1 text-sm text-muted-foreground">{product.notes}</p>
         </div>
@@ -55,10 +55,12 @@ export function ProductCard({ product }: ProductCardProps) {
                 <ShoppingCart className="mr-2 h-4 w-4" />
                 Add to Cart
             </Button>
-            <Button size="sm" variant="outline" className="w-full">
+            <Link to={`/products/${product.id}`} className="w-full">
+              <Button size="sm" variant="outline" className="w-full">
                 <Eye className="mr-2 h-4 w-4" />
                 Quick View
-            </Button>
+              </Button>
+            </Link>
         </div>
       </div>
     </div>

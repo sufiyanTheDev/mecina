@@ -9,6 +9,7 @@ import {
 } from "motion/react";
 
 import React, { useRef, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 
 interface NavbarProps {
@@ -115,6 +116,7 @@ export const NavBody = ({ children, className, visible }: NavBodyProps) => {
 
 export const NavItems = ({ items, className, onItemClick }: NavItemsProps) => {
   const [hovered, setHovered] = useState<number | null>(null);
+  const navigate = useNavigate();
 
   return (
     <motion.div
@@ -125,12 +127,16 @@ export const NavItems = ({ items, className, onItemClick }: NavItemsProps) => {
       )}
     >
       {items.map((item, idx) => (
-        <a
+        <button
           onMouseEnter={() => setHovered(idx)}
-          onClick={onItemClick}
+          onClick={() => {
+            onItemClick?.();
+            // internal navigation
+            if (item.link) navigate(item.link);
+          }}
           className="relative px-4 py-2 text-neutral-600 dark:text-neutral-300"
           key={`link-${idx}`}
-          href={item.link}
+          type="button"
         >
           {hovered === idx && (
             <motion.div
@@ -139,7 +145,7 @@ export const NavItems = ({ items, className, onItemClick }: NavItemsProps) => {
             />
           )}
           <span className="relative z-20">{item.name}</span>
-        </a>
+        </button>
       ))}
     </motion.div>
   );
@@ -231,9 +237,11 @@ export const MobileNavToggle = ({
 };
 
 export const NavbarLogo = () => {
+  const navigate = useNavigate();
   return (
-    <a
-      href="#"
+    <button
+      type="button"
+      onClick={() => navigate('/')}
       className="relative z-20 mr-4 flex items-center space-x-2 px-2 py-1 text-sm font-normal text-black"
     >
       <img
@@ -242,8 +250,8 @@ export const NavbarLogo = () => {
         width={30}
         height={30}
       />
-      <span className="font-medium text-black dark:text-white">Startup</span>
-    </a>
+      <span className="font-medium text-black dark:text-white">Mecina</span>
+    </button>
   );
 };
 
@@ -276,12 +284,23 @@ export const NavbarButton = ({
       "bg-gradient-to-b from-blue-500 to-blue-700 text-white shadow-[0px_2px_0px_0px_rgba(255,255,255,0.3)_inset]",
   };
 
+  const navigate = useNavigate();
+
+  if (href) {
+    return (
+      <button
+        type="button"
+        onClick={() => navigate(href)}
+        className={cn(baseStyles, variantStyles[variant], className)}
+        {...(props as any)}
+      >
+        {children}
+      </button>
+    );
+  }
+
   return (
-    <Tag
-      href={href || undefined}
-      className={cn(baseStyles, variantStyles[variant], className)}
-      {...props}
-    >
+    <Tag className={cn(baseStyles, variantStyles[variant], className)} {...(props as any)}>
       {children}
     </Tag>
   );

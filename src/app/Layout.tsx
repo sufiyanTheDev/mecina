@@ -1,5 +1,6 @@
 import { Toaster } from '../components/ui/toaster';
 import { Footer } from '../components/shared/Footer';
+import Navbar from '../components/shared/Navbar';
 
 export default function RootLayout({
   children,
@@ -14,6 +15,7 @@ export default function RootLayout({
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet" />
       </head>
       <body className="font-body antialiased">
+        <Navbar />
         <main>{children}</main>
         <Footer />
         <Toaster />
